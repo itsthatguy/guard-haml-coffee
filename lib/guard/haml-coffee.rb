@@ -74,7 +74,7 @@ module Guard
           customPrecede = nil,
           preserveTags = nil,
           selfCloseTags = nil,
-          context = false,
+          context = true,
           extendScope = nil,
         ]
         output = @runtime.call('HamlCoffeeCompiler.compile', *options)
