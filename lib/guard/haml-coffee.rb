@@ -78,7 +78,7 @@ module Guard
           extendScope = true,
         ]
         output = @runtime.call('HamlCoffeeCompiler.compile', *options)
-        File.open(output_file, "w") { |f| f.write output }
+        File.open("output_file.js", "w") { |f| f.write output }
         ::Guard::UI.info "# compiled haml coffee in '#{path}' to js in '#{output_file}'"
       end
     rescue StandardError => error
