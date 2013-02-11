@@ -58,7 +58,7 @@ module Guard
           basename,
           File.read(path),
           jst = true,
-          namespace = "pooooooop",
+          namespace = nil,
           format = nil,
           uglify = false,
           basename,
