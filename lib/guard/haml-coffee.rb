@@ -33,7 +33,7 @@ module Guard
       file_dir = File.dirname(file)
       file_name = File.basename(file).split('.')[0..-2].join('.')
 
-      file_name = "#{file_name}.jst" if file_name.match("\.jst").nil?
+      file_name = "#{file_name}.js" if file_name.match("\.js").nil?
 
       file_dir = file_dir.gsub(Regexp.new("#{@options[:input]}(\/){0,1}"), '') if @options[:input]
       file_dir = File.join(@options[:output], file_dir) if @options[:output]
@@ -51,7 +51,7 @@ module Guard
 
     def run_on_changes(paths)
       paths.each do |path|
-        basename = File.basename(path, '.jst.hamlc')
+        basename = File.basename(path, '.js.hamlc')
         output_file = get_output(path)
         FileUtils.mkdir_p File.dirname(output_file)
         options = [
