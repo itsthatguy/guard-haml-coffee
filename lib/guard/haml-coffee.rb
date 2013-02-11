@@ -61,7 +61,7 @@ module Guard
           namespace = "this['JST']",
           format = nil,
           uglify = false,
-          basename,
+          basename = false,
           escapeHtml = nil,
           escapeAttributes = nil,
           cleanValue = nil,
