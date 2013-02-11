@@ -61,7 +61,7 @@ module Guard
           namespace = "this['JST']",
           format = nil,
           uglify = false,
-          basename = false,
+          basename,
           escapeHtml = nil,
           escapeAttributes = nil,
           cleanValue = nil,
@@ -74,8 +74,8 @@ module Guard
           customPrecede = nil,
           preserveTags = nil,
           selfCloseTags = nil,
-          context = true,
-          extendScope = nil,
+          context = false,
+          extendScope = true,
         ]
         output = @runtime.call('HamlCoffeeCompiler.compile', *options)
         File.open(output_file, "w") { |f| f.write output }
